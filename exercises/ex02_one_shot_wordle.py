@@ -25,21 +25,21 @@ emoji_result: str = ""
 # Set up the variable to count what index the program is checking and the variable that will print as our emoji result once the while loop completes.
 
 while index_checking < len(secret_word):
-# Set up a while loop so that each index of the user's guess is checked for both matching its corresponding index in the secret word and for possible matches with characters in other indices of the secret word.
+    # Set up a while loop so that each index of the user's guess is checked for both matching its corresponding index in the secret word and for possible matches with characters in other indices of the secret word.
     if guess[index_checking] == secret_word[index_checking]:
         emoji_result = emoji_result + GREEN_BOX
         # If the character in the index being checked in the guess matches the corresponding index in the secret word, a green box is added to the emoji output.
     else: 
         char_exists: bool = False
         alt_indices: int = 0 
-        while char_exists == False and index_checking < len(secret_word) and alt_indices < len(secret_word):
+        while char_exists is False and index_checking < len(secret_word) and alt_indices < len(secret_word):
             if secret_word[alt_indices] == guess[index_checking]:
                 char_exists = True
                 emoji_result = emoji_result + YELLOW_BOX
                 # If the character in the guess index being checked doesn't match its secret word counterpart but does appear in the secret word in a different index, a yellow box is added.
             else:
                 alt_indices = alt_indices + 1    
-        if char_exists == False:
+        if char_exists is False:
             emoji_result = emoji_result + WHITE_BOX
             # And finally, if the character in the index being checked doesn't appear in the secret word at all, a white box is added to the emoji output.
 
