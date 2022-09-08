@@ -9,11 +9,6 @@ guess: str = str(input(f"What is your {word_length}-letter guess? "))
 while len(guess) != len(secret_word):
     guess = input(f"That was not {word_length} letters! Try again: ")
 
-if guess == secret_word:
-    print("Woo! You got it!")
-else: 
-    print("Not quite! Play again soon! ")
-
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
@@ -30,6 +25,7 @@ while index_checking < len(secret_word):
 
 print(emoji_result)
 
-
-
-#length of index checking? How to get loop going there
+if guess == secret_word:
+    print("Woo! You got it!")
+else: 
+    print("Not quite! Play again soon! ")
