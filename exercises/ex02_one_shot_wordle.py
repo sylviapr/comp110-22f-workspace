@@ -8,7 +8,7 @@ word_length: int = len(secret_word)
 # Set up the secret word and the secret word's length.
 
 guess: str = str(input(f"What is your {word_length}-letter guess? "))
-while len(guess) != len(secret_word):
+while len(guess) != word_length:
     guess = input(f"That was not {word_length} letters! Try again: ")
 
 # Set up the prompt for user to enter a guess that must be the same length as the secret word.
