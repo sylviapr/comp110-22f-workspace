@@ -34,4 +34,9 @@ def emojified(guess: str, secret: str) -> str:
     return(emoji_result)
 
 def input_guess(exp_length: int) -> str:
-    print 
+    # Can I reuse the guess variable name here?
+    guess: str = str(input(f"Enter a {exp_length} character word: "))
+    while exp_length != len(guess):
+        guess = input("That wasn't 5 chars! Try again: ")
+    if exp_length == len(guess):
+        return(guess)
