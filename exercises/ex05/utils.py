@@ -1,4 +1,4 @@
-"""EX05 utils"""
+"""Some utility functions that help us manipulate lists without changing the inputs."""
 
 
 __author__ = "730575415"
@@ -10,7 +10,7 @@ def only_evens(input: list[int]) -> list[int]:
     for checking in input:
         if checking % 2 == 0:
             output.append(checking)
-    return(output)
+    return output
 
 
 def concat(list_a: list[int], list_b: list[int]) -> list[int]:
@@ -20,7 +20,7 @@ def concat(list_a: list[int], list_b: list[int]) -> list[int]:
         output.append(index_a)
     for index_b in list_b:
         output.append(index_b)
-    return(output)
+    return output
 
 
 def sub(input: list[int], start_i: int, end_i: int):
@@ -31,9 +31,9 @@ def sub(input: list[int], start_i: int, end_i: int):
     if end_i > len(input):
         end_i = len(input)
     if len(input) == 0 or start_i > len(input) or end_i < 0:
-        return([])
+        return [] 
     i: int = start_i
     while i < end_i:
         output.append(input[i])
         i += 1
-    return(output)
+    return output
