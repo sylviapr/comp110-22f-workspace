@@ -46,11 +46,10 @@ def test_favcolor_comp110() -> None:
     assert favorite_color(xs) == 'comp110'
 
 
-
 def test_count_no_repeats() -> None:
     """Testing count with a list that has no repeated strs."""
     xs: list[int] = ["s", "y", "l", "v", "i", "a"]
-    assert count(["s", "y", "l", "v", "i", "a"]) == {'s': 1, 'y': 1, 'l': 1, 'v': 1, 'i': 1, 'a': 1}
+    assert count(xs) == {'s': 1, 'y': 1, 'l': 1, 'v': 1, 'i': 1, 'a': 1}
 
 
 def test_count_repeats() -> None:
