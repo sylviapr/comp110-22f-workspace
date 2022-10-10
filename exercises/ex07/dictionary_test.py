@@ -28,7 +28,22 @@ def test_invert_long() -> None:
     assert invert(xs) == {'oreo': 'cat', 'addy': 'dog', 'mango': 'bird', 'bessie': 'cow', 'rango': 'lizard', 'hen solo': 'chicken'}
 
 
+def test_favcolor_norepeats() -> None:
+    """Testing favorite_color for a dict with no repeated colors."""
+    xs: dict[str, str] = {"Marc": "yellow", "Ezri": "blue", "Kris": "red"}
+    assert favorite_color(xs) == 'yellow'
 
+
+def test_favcolor_repeat() -> None:
+    """Testing favorite_color for a dict with one color that is repeated and another color that isn't."""
+    xs: dict[str, str] = {"Marc": "yellow", "Ezri": "blue", "Kris": "blue"}
+    assert favorite_color(xs) == 'blue'
+
+
+def test_favcolor_comp110() -> None:
+    """Testing favorite_color for a dict in which the group's favorite color is no color at all, but rather comp110."""
+    xs: dict[str, str] = {"Marc": "comp110", "Ezri": "comp110", "Kris": "comp110", "Abigail": "blue"}
+    assert favorite_color(xs) == 'comp110'
 
 
 
