@@ -1,14 +1,17 @@
 """A fun game that picks a random integer between 1 and 100 and has the user try to guess it."""
 
+__author__ = "730575415"
+
+from random import randint
 points: int = 0
 player: str = ""
 adventure_points: int = 0
 menu_choice: int = 0
 COWBOY_EMOJI: str = "\U0001F920"
-from random import randint
 
 
 def main() -> None:
+    """The main function that allows this file to be run as a module."""
     greet()
     global points
     points = 0
@@ -34,12 +37,14 @@ def main() -> None:
 
 
 def greet() -> None:
+    """The function that presents a greeting and asks the player to give their name, which will be assigned to the global variable player."""
     global player
     player = str(input(f"Howdy! {COWBOY_EMOJI} Welcome to our number guessing game! What is your name? "))
     print(f"Nice to meet you, {player}! In this game, the computer will pick a random integer between 1 and 100, and your job is to guess what it is based on the computer's hints. Your points will go up for every guess you make, so a lower score is better. ")
 
 
 def number_game() -> None:
+    """The actual game. The computer picks a random integer between 1 and 100, and the player has to guess what it is."""
     secret_number: int = randint(1, 100)
     global points
     global adventure_points
@@ -73,10 +78,7 @@ def reset_guess(pts: int) -> int:
     if menu_choice == 2:
         print("Returning to the main menu")
         return pts
-
-
-
-
+    return pts
 
 
 if __name__ == "__main__":
